@@ -46,7 +46,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x21-es-w77">
                                 <rect key="frame" x="90" y="760" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NjQ-Ld-naw"/>
                                 </connections>
@@ -54,13 +54,13 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-Qx-dFz">
                                 <rect key="frame" x="90" y="99" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="hfy-uZ-O8q"/>
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="quaternarySystemFillColor" red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NOG-nk-rhJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1mo-ty-O0N"/>
                             <constraint firstItem="xU1-aj-LjZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5hs-t3-XBk"/>

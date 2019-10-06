@@ -15,15 +15,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var TOP: UITextField!
     let tDelegate = textFieldDelegate()
     let bDelegate = textFieldDelegate()
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.strokeWidth: 3.0]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         TOP.delegate = tDelegate
         BOTTOM.delegate = bDelegate
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        TOP.defaultTextAttributes = memeTextAttributes
+        BOTTOM.defaultTextAttributes = memeTextAttributes
     }
     @IBAction func pickAnImageFromAlbum(_ sender:Any) {
 
