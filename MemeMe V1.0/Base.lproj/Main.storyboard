@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xU1-aj-LjZ">
-                                <rect key="frame" x="0.0" y="1300" width="0.0" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Album" width="210.5" id="6LF-yu-gdc" userLabel="Album">
                                         <connections>
@@ -31,7 +31,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-bs-haA">
-                                <rect key="frame" x="0.0" y="526" width="0.0" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Item" id="hyH-7w-CqH"/>
                                 </items>
@@ -43,15 +43,21 @@
                                     <constraint firstAttribute="height" constant="818" id="YrZ-KM-Ixn"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x21-es-w77">
-                                <rect key="frame" x="90" y="765" width="234" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x21-es-w77">
+                                <rect key="frame" x="90" y="760" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NjQ-Ld-naw"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-Qx-dFz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-Qx-dFz">
                                 <rect key="frame" x="90" y="99" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hfy-uZ-O8q"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -74,8 +80,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="BOTTOM" destination="x21-es-w77" id="rZ0-O2-I6j"/>
-                        <outlet property="TOP" destination="qwu-Qx-dFz" id="Eba-3C-os1"/>
+                        <outlet property="BOTTOM" destination="x21-es-w77" id="DCM-oo-vet"/>
+                        <outlet property="TOP" destination="qwu-Qx-dFz" id="0b0-aH-Fsf"/>
                         <outlet property="cameraButton" destination="JUV-cN-gZw" id="E1d-ZL-lcU"/>
                         <outlet property="imageView" destination="NOG-nk-rhJ" id="8Mf-oq-Yeb"/>
                     </connections>

@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var BOTTOM: UITextFieldDelegate!
-    @IBOutlet weak var TOP: UITextFieldDelegate!
+    @IBOutlet weak var BOTTOM: UITextField!
+    @IBOutlet weak var TOP: UITextField!
+    let tDelegate = textFieldDelegate()
+    let bDelegate = textFieldDelegate()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        TOP.delegate = tDelegate
+        BOTTOM.delegate = bDelegate
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
