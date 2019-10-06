@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xU1-aj-LjZ">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="1300" width="0.0" height="44"/>
                                 <items>
                                     <barButtonItem title="Album" width="210.5" id="6LF-yu-gdc" userLabel="Album">
                                         <connections>
@@ -31,7 +31,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-bs-haA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="526" width="0.0" height="44"/>
                                 <items>
                                     <barButtonItem title="Item" id="hyH-7w-CqH"/>
                                 </items>
@@ -43,6 +43,16 @@
                                     <constraint firstAttribute="height" constant="818" id="YrZ-KM-Ixn"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x21-es-w77">
+                                <rect key="frame" x="90" y="765" width="234" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-Qx-dFz">
+                                <rect key="frame" x="90" y="99" width="234" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -50,14 +60,22 @@
                             <constraint firstItem="xU1-aj-LjZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5hs-t3-XBk"/>
                             <constraint firstItem="hgs-bs-haA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Eed-je-OW0"/>
                             <constraint firstItem="xU1-aj-LjZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FSd-am-RVO"/>
+                            <constraint firstItem="xU1-aj-LjZ" firstAttribute="top" secondItem="x21-es-w77" secondAttribute="bottom" constant="19" id="Ijv-D5-K8y"/>
                             <constraint firstItem="hgs-bs-haA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LGX-mR-Uax"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwu-Qx-dFz" secondAttribute="trailing" constant="90" id="PGa-lh-3kW"/>
                             <constraint firstItem="xU1-aj-LjZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R51-EM-bnk"/>
                             <constraint firstItem="hgs-bs-haA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="amA-b7-baT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x21-es-w77" secondAttribute="trailing" constant="90" id="cJt-IT-F1z"/>
+                            <constraint firstItem="x21-es-w77" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d1g-Ec-d69"/>
+                            <constraint firstItem="qwu-Qx-dFz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dt0-Ca-ZsQ"/>
+                            <constraint firstItem="qwu-Qx-dFz" firstAttribute="top" secondItem="hgs-bs-haA" secondAttribute="bottom" constant="11" id="jbg-f5-LSr"/>
                             <constraint firstItem="NOG-nk-rhJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="k7j-a5-WrM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="BOTTOM" destination="x21-es-w77" id="rZ0-O2-I6j"/>
+                        <outlet property="TOP" destination="qwu-Qx-dFz" id="Eba-3C-os1"/>
                         <outlet property="cameraButton" destination="JUV-cN-gZw" id="E1d-ZL-lcU"/>
                         <outlet property="imageView" destination="NOG-nk-rhJ" id="8Mf-oq-Yeb"/>
                     </connections>

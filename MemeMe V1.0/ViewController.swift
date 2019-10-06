@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var BOTTOM: UITextFieldDelegate!
+    @IBOutlet weak var TOP: UITextFieldDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
