@@ -15,12 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU1-aj-LjZ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xU1-aj-LjZ">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="6LF-yu-gdc">
+                                    <barButtonItem title="Album" width="210.5" id="6LF-yu-gdc" userLabel="Album">
                                         <connections>
-                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="NoT-r0-LFc"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="0Uk-uq-5Of"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera" width="143" id="JUV-cN-gZw">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="KH1-F4-Pzi"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -53,6 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="JUV-cN-gZw" id="E1d-ZL-lcU"/>
                         <outlet property="imageView" destination="NOG-nk-rhJ" id="8Mf-oq-Yeb"/>
                     </connections>
                 </viewController>
