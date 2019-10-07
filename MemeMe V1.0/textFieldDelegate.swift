@@ -20,6 +20,7 @@ class textFieldDelegate: NSObject, UITextFieldDelegate{
             typed = true
             return true
         }
+        textField.textAlignment = .center
         return true
         
       }

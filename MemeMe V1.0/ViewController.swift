@@ -13,11 +13,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var BOTTOM: UITextField!
     @IBOutlet weak var TOP: UITextField!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     let tDelegate = textFieldDelegate()
     let bDelegate = textFieldDelegate()
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.black,
-        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.strokeColor: UIColor.white,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: 3.0]
     override func viewDidLoad() {
@@ -39,6 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         TOP.defaultTextAttributes = memeTextAttributes
         BOTTOM.defaultTextAttributes = memeTextAttributes
         subscribeToKeyboardNotifications()
+        shareButton.isEnabled = false
     }
     @IBAction func pickAnImageFromAlbum(_ sender:Any) {
 
@@ -59,6 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageView.image = image
         picker.dismiss(animated: true, completion: nil)
+        shareButton.isEnabled = true
         }
      func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         picker.dismiss(animated: true, completion: nil)
@@ -92,6 +98,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.view.frame.origin.y = 0
         }
     }
+   func generateMemedImage() -> UIImage {
+    navBar.isHidden = true
+    toolBar.isHidden = true
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+    toolBar.isHidden = false
+    navBar.isHidden = false
+        return memedImage
+    }
+    func save() {
+            // Create the meme
+            let meme = Meme(topText: TOP.text!, bottomText: BOTTOM.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+        
+    }
+    @IBAction func share(_ sender: Any){
+        let memedImage = generateMemedImage()
+        let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityController.completionWithItemsHandler = { activity, success, items, error in
+                   self.save()
+                   self.dismiss(animated: true, completion: nil)
+               }
+        self.present(activityController, animated: true, completion: nil)
+               
+           }
+    @IBAction func cancelButtonAction(_ sender: Any) {
+          self.dismiss(animated: true, completion: nil)
+           TOP.text = "TOP"
+           BOTTOM.text = "BOTTOM"
+           self.imageView.image = nil
+       }
+        
+        
+    }
 
-}
+
 
