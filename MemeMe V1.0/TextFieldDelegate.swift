@@ -9,20 +9,12 @@
 import Foundation
 import UIKit
 
-class textFieldDelegate: NSObject, UITextFieldDelegate{
-    var typed: Bool
-    override init(){
-        typed = false
-    }
+class TextFieldDelegate: NSObject, UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if !typed{
-            textField.text = ""
-            typed = true
-            return true
-        }
         textField.textAlignment = .center
+        textField.text = ""
         return true
-        
+           
       }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
